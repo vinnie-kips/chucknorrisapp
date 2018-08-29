@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/dreamerTram/chucknorrisapp.svg?branch=develop)](https://travis-ci.com/dreamerTram/chucknorrisapp)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 # chucknorrisapp
