@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Provider } from "react-redux";
 import store from "../root/store";
 
-import PrimaryButton from "../components/button/button";
+import Dashboard from "../dashboard/dashboard-container";
 
 const AppContainer = styled.div`
   align-items: center;
@@ -16,7 +16,7 @@ const AppContainer = styled.div`
 const App = () => (
   <Provider store={store}>
     <AppContainer>
-      <PrimaryButton>Search For Jokes</PrimaryButton>
+      <Dashboard />
     </AppContainer>
   </Provider>
 );
