@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Provider } from "react-redux";
+import store from "../root/store";
 
 import PrimaryButton from "../components/button/button";
 
@@ -12,9 +14,11 @@ const AppContainer = styled.div`
 `;
 
 const App = () => (
-  <AppContainer>
-    <PrimaryButton>Search For Jokes</PrimaryButton>
-  </AppContainer>
+  <Provider store={store}>
+    <AppContainer>
+      <PrimaryButton>Search For Jokes</PrimaryButton>
+    </AppContainer>
+  </Provider>
 );
 
 export default App;
