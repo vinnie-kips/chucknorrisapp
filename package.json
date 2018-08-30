@@ -1,5 +1,6 @@
 {
   "name": "chucknorrisapp",
+  "homepage": "https://dreamerTram.github.io/chucknorrisapp",
   "author": {
     "name": "Mbarak Mbigo",
     "email": "mbigombaraktram@gmail.com"
@@ -8,6 +9,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "3.0.1",
+    "gh-pages": "1.2.0",
     "react": "16.4.2",
     "react-dom": "16.4.2"
   },
@@ -21,6 +23,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
