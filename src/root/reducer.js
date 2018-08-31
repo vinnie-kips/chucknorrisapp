@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import categories from "../app/reducer";
+import categories from "../dashboard/reducer";
 
 const rootReducer = combineReducers({
   categories
