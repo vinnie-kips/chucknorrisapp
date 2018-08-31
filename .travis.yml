@@ -9,14 +9,11 @@ cache:
     - node_modules
     - $HOME/.yarn-cache
 
-before_install:
-  - chmod +x deploy.sh
-
 script:
   - yarn test
 
 after_success:
-  - ./deploy.sh
+  - yarn deploy
 
 deploy:
   provider: pages
