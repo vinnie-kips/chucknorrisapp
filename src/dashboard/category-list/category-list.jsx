@@ -1,0 +1,38 @@
+import React from "react";
+import styled from "styled-components";
+
+import { PrimaryButton } from "../../components/buttons/buttons";
+
+const ListContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+`;
+
+const CategoryContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const Category = styled(PrimaryButton)`
+  && {
+    margin: 1rem;
+    width: 8rem;
+  }
+`;
+
+const Heading = styled.h1``;
+
+const CategoryList = ({ categories }) => (
+  <ListContainer>
+    <Heading>Jokes Categories</Heading>
+    <CategoryContainer>
+      {categories.map((category, key) => (
+        <Category key={key}>{category}</Category>
+      ))}
+    </CategoryContainer>
+  </ListContainer>
+);
+
+export default CategoryList;
