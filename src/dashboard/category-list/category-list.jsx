@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { PrimaryButton } from "../../components/buttons/buttons";
+import { arrayOf, string } from "prop-types";
 
 const ListContainer = styled.div`
   align-items: center;
@@ -34,5 +35,9 @@ const CategoryList = ({ categories }) => (
     </CategoryContainer>
   </ListContainer>
 );
+
+CategoryList.propTypes = {
+  categories: arrayOf(string).isRequired
+};
 
 export default CategoryList;

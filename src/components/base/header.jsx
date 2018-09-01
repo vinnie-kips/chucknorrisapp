@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { WHITE, SILVER_GREY } from "../../utils/colors";
 
-const Header = styled.div`
+const Header = styled.header`
   background-color: ${WHITE};
   border-bottom: 2px solid ${SILVER_GREY};
   height: 5rem;
