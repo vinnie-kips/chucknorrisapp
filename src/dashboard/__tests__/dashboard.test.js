@@ -3,10 +3,11 @@ import { shallow } from "enzyme";
 
 import Dashboard from "../dashboard";
 
-describe("DashBoard", () => {
+describe("Dashboard", () => {
+  const categories = ["movie", "science"];
   const wrapper = shallow(<Dashboard />);
 
-  test("renders App component", () => {
+  test("renders Dashboard component", () => {
     expect(wrapper.exists()).toBeTruthy();
   });
 });

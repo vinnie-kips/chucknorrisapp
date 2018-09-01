@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { injectGlobal } from "styled-components";
 
 import App from "./app/App";
+import { WHITE_GREY } from "./utils/colors";
 import registerServiceWorker from "./registerServiceWorker";
 
 injectGlobal`
@@ -12,7 +13,7 @@ injectGlobal`
   }
 
   body {
-    background-color: #ecf0f1;
+    background-color: ${WHITE_GREY};
     margin: 0;
   }
 `;
