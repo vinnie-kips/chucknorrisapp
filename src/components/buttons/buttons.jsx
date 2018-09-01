@@ -11,4 +11,4 @@ const PrimaryButton = styled(Button)`
   padding: 0 30px;
 `;
 
-export default PrimaryButton;
+export { PrimaryButton };
