@@ -1,22 +1,24 @@
 import {
-  LOAD_CATEGORIES,
-  LOAD_CATEGORIES_SUCCEEDED,
-  LOAD_CATEGORIES_FAILED
+  LOAD_CATEGORY_RANDOM_JOKES,
+  LOAD_CATEGORY_RANDOM_JOKES_SUCCEEDED,
+  LOAD_CATEGORY_RANDOM_JOKES_FAILED
 } from "./actions";
 
 const initialState = {
-  categoryList: [],
-  isLoading: false,
-  hasLoaded: false,
-  hasError: {
-    status: false,
-    error: ""
-  },
+  randomCategoryJoke: {
+    joke: {},
+    isLoading: false,
+    hasLoaded: false,
+    hasError: {
+      status: false,
+      error: ""
+    }
+  }
 };
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
-    case LOAD_CATEGORIES: {
+    case LOAD_CATEGORY_RANDOM_JOKES: {
       return {
         ...state,
         isLoading: true,
@@ -28,16 +30,16 @@ export default (state = initialState, action = {}) => {
       };
     }
 
-    case LOAD_CATEGORIES_SUCCEEDED: {
+    case LOAD_CATEGORY_RANDOM_JOKES_SUCCEEDED: {
       return {
         ...state,
         isLoading: false,
         hasLoaded: true,
-        categoryList: action.categories
+        data: action.data
       };
     }
 
-    case LOAD_CATEGORIES_FAILED: {
+    case LOAD_CATEGORY_RANDOM_JOKES_FAILED: {
       return {
         ...state,
         isLoading: false,

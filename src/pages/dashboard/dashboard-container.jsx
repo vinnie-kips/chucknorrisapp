@@ -2,12 +2,13 @@ import { connect } from "react-redux";
 
 import Dashboard from "./dashboard";
 import { loadCategories } from "./actions";
+import { loadCategoryRandomJokes } from "../category/actions";
 import preLoad from "../../higher-order-components/pre-load";
 
 const mapStateToProps = state => {
   const { categories } = state;
   return {
-    categories: categories.data || [],
+    categories: categories.categoryList || [],
     isLoading: categories.isLoading,
     hasError: categories.hasError.status,
     hasLoaded: categories.hasLoaded
@@ -21,6 +22,7 @@ const mapDispatchTpProps = dispatch => ({
 
   handleCategory(history, event) {
     const { value } = event.currentTarget;
+    dispatch(loadCategoryRandomJokes(value));
     history.push(`category/${value}`);
   }
 });

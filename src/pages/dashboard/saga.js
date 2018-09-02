@@ -17,6 +17,7 @@ export function* fetchJokesCategories() {
   }
 }
 
+
 function* watchFetchJokesCategories() {
   yield takeLatest(LOAD_CATEGORIES, fetchJokesCategories);
 }
