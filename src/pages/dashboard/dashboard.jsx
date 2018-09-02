@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { arrayOf, string, bool } from "prop-types";
 
 import CategoryList from "./category-list/category-list";
-import Loader from "../components/Loader/Loader";
+import Loader from "../../components/Loader/Loader";
 
 const DashboardContainer = styled.div`
   display: flex;

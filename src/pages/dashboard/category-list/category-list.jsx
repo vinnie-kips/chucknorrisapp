@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { PrimaryButton } from "../../components/buttons/buttons";
+import { PrimaryButton } from "../../../components/buttons/buttons";
 import { arrayOf, string } from "prop-types";
 
 const ListContainer = styled.div`

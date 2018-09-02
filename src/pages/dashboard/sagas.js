@@ -5,7 +5,7 @@ import {
   loadCategoriesSucceeded,
   loadCategoriesFailed
 } from "./actions";
-import { getJokesCategories } from "../apiEndpoints";
+import { getJokesCategories } from "../../apiEndpoints";
 
 export function* fetchJokesCategories() {
   try {

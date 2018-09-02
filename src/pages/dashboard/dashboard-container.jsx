@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import Dashboard from "./dashboard";
 import { loadCategories } from "./actions";
-import preLoad from "../higher-order-components/pre-load";
+import preLoad from "../../higher-order-components/pre-load";
 
 const mapStateToProps = state => {
   const { categories } = state;
