@@ -15,9 +15,9 @@ export function* fetchCategoryRandomJokes({ category }) {
 
     yield put(
       loadCategoryRandomJokesSucceeded({
-        category: categoryList[0],
-        icon_url,
         id,
+        category: categoryList[0],
+        iconUrl: icon_url,
         joke: value
       })
     );

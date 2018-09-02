@@ -5,14 +5,12 @@ import {
 } from "./actions";
 
 const initialState = {
-  randomCategoryJoke: {
-    joke: {},
-    isLoading: false,
-    hasLoaded: false,
-    hasError: {
-      status: false,
-      error: ""
-    }
+  data: {},
+  isLoading: false,
+  hasLoaded: false,
+  hasError: {
+    status: false,
+    error: ""
   }
 };
 
@@ -35,7 +33,7 @@ export default (state = initialState, action = {}) => {
         ...state,
         isLoading: false,
         hasLoaded: true,
-        data: action.data
+        data: { ...action.data }
       };
     }
 
