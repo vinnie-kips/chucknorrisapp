@@ -7,8 +7,7 @@ import Header from "../components/base/header";
 import ContentContainer from "../components/base/container";
 import Footer from "../components/base/footer";
 import Logo from "./logo.svg";
-
-import Dashboard from "../dashboard/dashboard-container";
+import AppRoutes from "./Routes";
 
 const AppHeader = styled(Header)`
   align-items: center;
@@ -39,7 +38,7 @@ const App = () => (
         <AppLogo src={Logo} />
       </AppHeader>
       <ContentContainer>
-        <Dashboard />
+        <AppRoutes />
       </ContentContainer>
       <AppFooter>
         <span>About Us</span>
