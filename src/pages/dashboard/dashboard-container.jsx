@@ -17,14 +17,25 @@ const mapStateToProps = state => {
 const mapDispatchTpProps = dispatch => ({
   onLoad() {
     dispatch(loadCategories());
+  },
+
+  handleCategory(history, event) {
+    const { value } = event.currentTarget;
+    history.push(`category/${value}`);
   }
 });
 
-const mergeProps = (stateProps, dispatchProps) => ({
+const mergeProps = (stateProps, dispatchProps, ownProps) => ({
   ...stateProps,
   ...dispatchProps,
+  ...ownProps,
+
   onLoad() {
     !stateProps.hasLoaded && dispatchProps.onLoad();
+  },
+
+  handleCategory(event) {
+    dispatchProps.handleCategory(ownProps.history, event);
   }
 });
 
