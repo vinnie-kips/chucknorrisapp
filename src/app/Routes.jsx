@@ -1,17 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Dashboard from "../pages/dashboard/dashboard-container";
 import Category from "../pages/category/category-container";
 
+const NoMatch = () => <div>Route Not Found</div>;
+
 const AppRoutes = () => (
-  <Router>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Switch>
       <Route exact path="/" component={Dashboard} />
       <Route path="/category/:category" component={Category} />
-      <Route path="*" render={() => <div>Route Not Found</div>} />
+      <Route component={NoMatch} />
     </Switch>
-  </Router>
+  </BrowserRouter>
 );
 
 export default AppRoutes;
