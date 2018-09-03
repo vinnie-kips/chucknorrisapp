@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import Dashboard from "./dashboard";
 import { loadCategories } from "./actions";
-import { loadCategoryRandomJokes } from "../view-category/actions";
+import { loadCategoryRandomJoke } from "../view-category/actions";
 import preLoad from "../../higher-order-components/pre-load";
 
 const mapStateToProps = state => {
@@ -22,7 +22,7 @@ const mapDispatchTpProps = dispatch => ({
 
   handleLoadCategoryJokes(event) {
     const { value } = event.currentTarget;
-    dispatch(loadCategoryRandomJokes(value));
+    dispatch(loadCategoryRandomJoke(value));
   }
 });
 

@@ -1,28 +1,28 @@
-const LOAD_CATEGORY_RANDOM_JOKES = "LOAD_CATEGORY_RANDOM_JOKES";
-const LOAD_CATEGORY_RANDOM_JOKES_SUCCEEDED =
-  "LOAD_CATEGORY_RANDOM_JOKES_SUCCEEDED";
-const LOAD_CATEGORY_RANDOM_JOKES_FAILED = "LOAD_CATEGORY_RANDOM_JOKES_FAILED";
+const LOAD_CATEGORY_RANDOM_JOKE = "LOAD_CATEGORY_RANDOM_JOKE";
+const LOAD_CATEGORY_RANDOM_JOKE_SUCCEEDED =
+  "LOAD_CATEGORY_RANDOM_JOKE_SUCCEEDED";
+const LOAD_CATEGORY_RANDOM_JOKE_FAILED = "LOAD_CATEGORY_RANDOM_JOKE_FAILED";
 
-const loadCategoryRandomJokes = category => ({
-  type: LOAD_CATEGORY_RANDOM_JOKES,
+const loadCategoryRandomJoke = category => ({
+  type: LOAD_CATEGORY_RANDOM_JOKE,
   category
 });
 
-const loadCategoryRandomJokesSucceeded = data => ({
-  type: LOAD_CATEGORY_RANDOM_JOKES_SUCCEEDED,
+const loadCategoryRandomJokeSucceeded = data => ({
+  type: LOAD_CATEGORY_RANDOM_JOKE_SUCCEEDED,
   data
 });
 
-const loadCategoryRandomJokesFailed = error => ({
-  type: LOAD_CATEGORY_RANDOM_JOKES_FAILED,
+const loadCategoryRandomJokeFailed = error => ({
+  type: LOAD_CATEGORY_RANDOM_JOKE_FAILED,
   error
 });
 
 export {
-  LOAD_CATEGORY_RANDOM_JOKES,
-  LOAD_CATEGORY_RANDOM_JOKES_SUCCEEDED,
-  LOAD_CATEGORY_RANDOM_JOKES_FAILED,
-  loadCategoryRandomJokes,
-  loadCategoryRandomJokesSucceeded,
-  loadCategoryRandomJokesFailed
+  LOAD_CATEGORY_RANDOM_JOKE,
+  LOAD_CATEGORY_RANDOM_JOKE_SUCCEEDED,
+  LOAD_CATEGORY_RANDOM_JOKE_FAILED,
+  loadCategoryRandomJoke,
+  loadCategoryRandomJokeSucceeded,
+  loadCategoryRandomJokeFailed
 };

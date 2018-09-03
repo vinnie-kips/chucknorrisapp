@@ -1,7 +1,7 @@
 import {
-  LOAD_CATEGORY_RANDOM_JOKES,
-  LOAD_CATEGORY_RANDOM_JOKES_SUCCEEDED,
-  LOAD_CATEGORY_RANDOM_JOKES_FAILED
+  LOAD_CATEGORY_RANDOM_JOKE,
+  LOAD_CATEGORY_RANDOM_JOKE_SUCCEEDED,
+  LOAD_CATEGORY_RANDOM_JOKE_FAILED
 } from "./actions";
 
 const initialState = {
@@ -16,7 +16,7 @@ const initialState = {
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
-    case LOAD_CATEGORY_RANDOM_JOKES: {
+    case LOAD_CATEGORY_RANDOM_JOKE: {
       return {
         ...state,
         isLoading: true,
@@ -28,7 +28,7 @@ export default (state = initialState, action = {}) => {
       };
     }
 
-    case LOAD_CATEGORY_RANDOM_JOKES_SUCCEEDED: {
+    case LOAD_CATEGORY_RANDOM_JOKE_SUCCEEDED: {
       return {
         ...state,
         isLoading: false,
@@ -37,7 +37,7 @@ export default (state = initialState, action = {}) => {
       };
     }
 
-    case LOAD_CATEGORY_RANDOM_JOKES_FAILED: {
+    case LOAD_CATEGORY_RANDOM_JOKE_FAILED: {
       return {
         ...state,
         isLoading: false,

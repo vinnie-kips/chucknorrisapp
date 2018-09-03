@@ -1,20 +1,20 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 
 import {
-  LOAD_CATEGORY_RANDOM_JOKES,
-  loadCategoryRandomJokesSucceeded,
-  loadCategoryRandomJokesFailed
+  LOAD_CATEGORY_RANDOM_JOKE,
+  loadCategoryRandomJokeSucceeded,
+  loadCategoryRandomJokeFailed
 } from "./actions";
 import { getRandomCategoryJoke } from "../../apiEndpoints";
 
-export function* fetchCategoryRandomJokes({ category }) {
+export function* fetchCategoryRandomJoke({ category }) {
   try {
     const {
       body: { category: categoryList, icon_url, id, value }
     } = yield call(getRandomCategoryJoke, category);
 
     yield put(
-      loadCategoryRandomJokesSucceeded({
+      loadCategoryRandomJokeSucceeded({
         id,
         category: categoryList[0],
         iconUrl: icon_url,
@@ -22,12 +22,12 @@ export function* fetchCategoryRandomJokes({ category }) {
       })
     );
   } catch (error) {
-    yield put(loadCategoryRandomJokesFailed(error));
+    yield put(loadCategoryRandomJokeFailed(error));
   }
 }
 
-function* watchFetchCategoryRandomJokes() {
-  yield takeLatest(LOAD_CATEGORY_RANDOM_JOKES, fetchCategoryRandomJokes);
+function* watchFetchCategoryRandomJoke() {
+  yield takeLatest(LOAD_CATEGORY_RANDOM_JOKE, fetchCategoryRandomJoke);
 }
 
-export default watchFetchCategoryRandomJokes;
+export default watchFetchCategoryRandomJoke;
