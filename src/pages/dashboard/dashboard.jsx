@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { arrayOf, string, bool, func } from "prop-types";
 
-import CategoryList from "./category-list/category-list";
+import CategoryList from "./category-list";
 import Loader from "../../components/loader/loader";
 
 const DashboardContainer = styled.div`
@@ -10,7 +10,12 @@ const DashboardContainer = styled.div`
   flex-direction: column;
 `;
 
-const Dashboard = ({ categories, isLoading, hasError, handleCategory }) => (
+const Dashboard = ({
+  categories,
+  isLoading,
+  hasError,
+  handleLoadCategoryJokes
+}) => (
   <DashboardContainer>
     {isLoading ? (
       <Loader />
@@ -18,7 +23,10 @@ const Dashboard = ({ categories, isLoading, hasError, handleCategory }) => (
       "Error Loading categories"
     ) : (
       categories.length && (
-        <CategoryList categories={categories} handleCategory={handleCategory} />
+        <CategoryList
+          categories={categories}
+          handleLoadCategoryJokes={handleLoadCategoryJokes}
+        />
       )
     )}
   </DashboardContainer>
