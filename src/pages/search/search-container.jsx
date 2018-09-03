@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import Category from "./category";
+import Search from "./search";
 
 const mapStateToProps = state => {
   const { data, isLoading, hasError, hasLoaded } = state.randomCategoryJoke;
@@ -20,4 +20,4 @@ const mapDispatchToProps = dipatch => ({});
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Category);
+)(Search);
