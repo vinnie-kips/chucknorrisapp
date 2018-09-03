@@ -5,7 +5,7 @@ import Dashboard from "../dashboard";
 
 describe("Dashboard", () => {
   const categories = ["movie", "science"];
-  const wrapper = shallow(<Dashboard />);
+  const wrapper = shallow(<Dashboard categories={categories} />);
 
   test("renders Dashboard component", () => {
     expect(wrapper.exists()).toBeTruthy();

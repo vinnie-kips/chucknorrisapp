@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { PrimaryButton } from "../../components/buttons/buttons";
+import { PrimaryButton } from "../../../components/buttons/buttons";
 import { arrayOf, string } from "prop-types";
 
 const ListContainer = styled.div`
@@ -25,12 +25,14 @@ const Category = styled(PrimaryButton)`
 
 const Heading = styled.h1``;
 
-const CategoryList = ({ categories }) => (
+const CategoryList = ({ categories, handleCategory }) => (
   <ListContainer>
     <Heading>Jokes Categories</Heading>
     <CategoryContainer>
       {categories.map((category, key) => (
-        <Category key={key}>{category}</Category>
+        <Category onClick={handleCategory} key={key} value={category}>
+          {category}
+        </Category>
       ))}
     </CategoryContainer>
   </ListContainer>

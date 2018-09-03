@@ -5,7 +5,7 @@ import {
   loadCategoriesSucceeded,
   loadCategoriesFailed
 } from "./actions";
-import { getJokesCategories } from "../apiEndpoints";
+import { getJokesCategories } from "../../apiEndpoints";
 
 export function* fetchJokesCategories() {
   try {
@@ -16,6 +16,7 @@ export function* fetchJokesCategories() {
     yield put(loadCategoriesFailed(error));
   }
 }
+
 
 function* watchFetchJokesCategories() {
   yield takeLatest(LOAD_CATEGORIES, fetchJokesCategories);

@@ -5,13 +5,13 @@ import {
 } from "./actions";
 
 const initialState = {
-  data: [],
+  categoryList: [],
   isLoading: false,
   hasLoaded: false,
   hasError: {
     status: false,
     error: ""
-  }
+  },
 };
 
 export default (state = initialState, action = {}) => {
@@ -33,7 +33,7 @@ export default (state = initialState, action = {}) => {
         ...state,
         isLoading: false,
         hasLoaded: true,
-        data: action.categories
+        categoryList: action.categories
       };
     }
 
