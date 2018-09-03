@@ -1,8 +1,6 @@
 import { connect } from "react-redux";
 
 import CategoryDialog from "./view-category";
-import preLoad from "../../higher-order-components/pre-load";
-import { loadCategoryRandomJokes } from "./actions";
 
 const mapStateToProps = state => {
   const { data, isLoading, hasError, hasLoaded } = state.randomCategoryJoke;
@@ -18,17 +16,9 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  fetchCategoryJoke() {
-    dispatch(loadCategoryRandomJokes("dev"));
-  },
-
-  onLoad() {
-    dispatch(loadCategoryRandomJokes("dev"));
-  }
-});
+const mapDispatchToProps = dispatch => ({});
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(preLoad(CategoryDialog));
+)(CategoryDialog);

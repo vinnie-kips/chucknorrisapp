@@ -31,7 +31,6 @@ class CategoryList extends React.Component {
       open: false
     };
 
-    this.handleFetchJoke = this.handleFetchJoke.bind(this);
     this.handleSelectCategory = this.handleSelectCategory.bind(this);
     this.handleClose = this.handleClose.bind(this);
   }
@@ -46,13 +45,14 @@ class CategoryList extends React.Component {
     this.setState({ open: true });
   }
 
-  handleFetchJoke(event) {
-    const { fetchCategoryJoke } = this.props;
-    console.log("event", event.currentTarget);
-  }
-
   render() {
-    const { categories, isLoading, hasError, hasLoaded } = this.props;
+    const {
+      categories,
+      isLoading,
+      hasError,
+      hasLoaded,
+      handleLoadCategoryJokes
+    } = this.props;
     return (
       <ListContainer>
         <CategoryDialog
@@ -61,7 +61,7 @@ class CategoryList extends React.Component {
           isLoading={isLoading}
           hasError={hasError}
           hasLoaded={hasLoaded}
-          fetchCategoryJoke={this.handleFetchJoke}
+          handleLoadCategoryJokes={handleLoadCategoryJokes}
         />
 
         <CategoryContainer>

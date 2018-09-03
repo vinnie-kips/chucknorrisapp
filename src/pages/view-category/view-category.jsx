@@ -9,6 +9,11 @@ import DialogActions from "@material-ui/core/DialogActions";
 
 import Loader from "../../components/loader/loader";
 
+const ContentSection = styled.section`
+  display: flex;
+  justify-content: center;
+`;
+
 const JokeDialog = styled(Dialog)`
   && {
     margin: auto;
@@ -27,12 +32,14 @@ const CategoryDialog = ({
   isLoading,
   hasLoaded,
   hasError,
-  fetchCategoryJoke,
+  handleLoadCategoryJokes,
   ...otherProps
 }) => (
   <JokeDialog onClose={onClose} open={open} {...otherProps}>
-    <DialogTitle>{isLoading ? "Category" : category}</DialogTitle>
-    <section>
+    <DialogTitle>
+      {isLoading ? "Loading category joke..." : category}
+    </DialogTitle>
+    <ContentSection>
       {isLoading ? (
         <Loader />
       ) : hasLoaded && hasError ? (
@@ -40,9 +47,13 @@ const CategoryDialog = ({
       ) : (
         <ListItemText primary={joke} />
       )}
-    </section>
+    </ContentSection>
     <DialogActions>
-      <Button onClick={this.fetchCategoryJoke} value={category} color="primary">
+      <Button
+        onClick={handleLoadCategoryJokes}
+        value={category}
+        color="primary"
+      >
         Next Joke
       </Button>
       <Button onClick={onClose} color="primary">
