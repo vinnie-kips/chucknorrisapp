@@ -1,21 +1,26 @@
 import { connect } from "react-redux";
 
 import Search from "./search";
+import { searchJokes } from "./actions";
 
 const mapStateToProps = state => {
-  const { data, isLoading, hasError, hasLoaded } = state.randomCategoryJoke;
+  const { data, isLoading, hasError, hasLoaded } = state.searchResults;
 
   return {
-    category: data.category,
-    joke: data.joke,
-    iconUrl: data.iconUrl,
+    results: data,
     isLoading: isLoading,
     hasError: hasError.status,
     hasLoaded: hasLoaded
   };
 };
 
-const mapDispatchToProps = dipatch => ({});
+const mapDispatchToProps = dipatch => ({
+  searchJokes(query) {
+    if (query) {
+      dipatch(searchJokes(query));
+    }
+  }
+});
 
 export default connect(
   mapStateToProps,

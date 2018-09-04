@@ -5,16 +5,20 @@ import {
   searchJokesSucceeded,
   searchJokesFailed
 } from "./actions";
-import { getRandomCategoryJoke } from "../../apiEndpoints";
+import { searchJokes as fetchJokes } from "../../apiEndpoints";
 
-export function* searchJokes({ category }) {
+export function* searchJokes({ query }) {
   try {
-    const { body } = yield call(getRandomCategoryJoke, category);
+    const {
+      body: { result }
+    } = yield call(fetchJokes, query);
 
-    console.log("search data", body);
+    // takes first 10 for simplicity
+    const topTen = result.length > 10 ? result.slice(0, 10) : result;
 
-    yield put(searchJokesSucceeded(body));
+    yield put(searchJokesSucceeded(topTen));
   } catch (error) {
+    console.log("error", error);
     yield put(searchJokesFailed(error));
   }
 }

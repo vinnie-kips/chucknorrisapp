@@ -2,12 +2,12 @@ import { combineReducers } from "redux";
 
 import categories from "../pages/dashboard/reducer";
 import randomCategoryJoke from "../pages/view-category/reducer";
-import searchJokes from "../pages/search/reducer";
+import searchResults from "../pages/search/reducer";
 
 const rootReducer = combineReducers({
   categories,
   randomCategoryJoke,
-  searchJokes
+  searchResults
 });
 
 export default rootReducer;

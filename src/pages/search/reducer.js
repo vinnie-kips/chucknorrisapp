@@ -5,7 +5,7 @@ import {
 } from "./actions";
 
 const initialState = {
-  data: {},
+  data: [],
   isLoading: false,
   hasLoaded: false,
   hasError: {
@@ -33,7 +33,7 @@ export default (state = initialState, action = {}) => {
         ...state,
         isLoading: false,
         hasLoaded: true,
-        data: { ...action.data }
+        data: action.data
       };
     }
 

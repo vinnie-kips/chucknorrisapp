@@ -2,8 +2,9 @@ const SEARCH_JOKES = "SEARCH_JOKES";
 const SEARCH_JOKES_SUCCEEDED = "SEARCH_JOKES_SUCCEEDED";
 const SEARCH_JOKES_FAILED = "SEARCH_JOKES_FAILED";
 
-const searchJokes = () => ({
-  type: SEARCH_JOKES
+const searchJokes = query => ({
+  type: SEARCH_JOKES,
+  query
 });
 
 const searchJokesSucceeded = data => ({
