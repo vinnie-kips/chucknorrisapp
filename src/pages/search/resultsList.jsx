@@ -18,6 +18,7 @@ const Heading = styled.h1`
   margin: 0.5rem 0;
 `;
 
+console.log("data");
 const ResultsList = ({ results }) => (
   <ListContainer>
     <Heading>Search Results</Heading>
