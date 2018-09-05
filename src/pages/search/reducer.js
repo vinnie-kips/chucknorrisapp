@@ -1,11 +1,11 @@
 import {
-  LOAD_CATEGORY_RANDOM_JOKES,
-  LOAD_CATEGORY_RANDOM_JOKES_SUCCEEDED,
-  LOAD_CATEGORY_RANDOM_JOKES_FAILED
+  SEARCH_JOKES,
+  SEARCH_JOKES_SUCCEEDED,
+  SEARCH_JOKES_FAILED
 } from "./actions";
 
 const initialState = {
-  data: {},
+  data: [],
   isLoading: false,
   hasLoaded: false,
   hasError: {
@@ -16,7 +16,7 @@ const initialState = {
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
-    case LOAD_CATEGORY_RANDOM_JOKES: {
+    case SEARCH_JOKES: {
       return {
         ...state,
         isLoading: true,
@@ -28,16 +28,16 @@ export default (state = initialState, action = {}) => {
       };
     }
 
-    case LOAD_CATEGORY_RANDOM_JOKES_SUCCEEDED: {
+    case SEARCH_JOKES_SUCCEEDED: {
       return {
         ...state,
         isLoading: false,
         hasLoaded: true,
-        data: { ...action.data }
+        data: action.data
       };
     }
 
-    case LOAD_CATEGORY_RANDOM_JOKES_FAILED: {
+    case SEARCH_JOKES_FAILED: {
       return {
         ...state,
         isLoading: false,

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { arrayOf, string, bool, func } from "prop-types";
 
 import CategoryList from "./category-list";
+import { SecondaryButton } from "../../components/buttons/buttons";
 import Loader from "../../components/loader/loader";
 
 const DashboardContainer = styled.div`
@@ -10,13 +11,21 @@ const DashboardContainer = styled.div`
   flex-direction: column;
 `;
 
+const SearchButton = styled(SecondaryButton)`
+  align-self: center;
+  width: 15rem;
+  height: 3rem;
+`;
+
 const Dashboard = ({
   categories,
   isLoading,
   hasError,
-  handleLoadCategoryJokes
+  handleLoadCategoryJokes,
+  handleNavigateToSearch
 }) => (
   <DashboardContainer>
+    <SearchButton onClick={handleNavigateToSearch}>Search Jokes</SearchButton>
     {isLoading ? (
       <Loader />
     ) : hasError ? (

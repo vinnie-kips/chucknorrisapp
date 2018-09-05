@@ -15,7 +15,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchTpProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   onLoad() {
     dispatch(loadCategories());
   },
@@ -23,10 +23,25 @@ const mapDispatchTpProps = dispatch => ({
   handleLoadCategoryJokes(event) {
     const { value } = event.currentTarget;
     dispatch(loadCategoryRandomJoke(value));
+  },
+
+  handleNavigateToSearch(history) {
+    console.log("history", history);
+    history.push("/search");
+  }
+});
+
+const mergeProps = (stateProps, dispatchProps, ownProps) => ({
+  ...stateProps,
+  ...dispatchProps,
+  ...ownProps,
+  handleNavigateToSearch() {
+    dispatchProps.handleNavigateToSearch(ownProps.history);
   }
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchTpProps
+  mapDispatchToProps,
+  mergeProps
 )(preLoad(Dashboard));
