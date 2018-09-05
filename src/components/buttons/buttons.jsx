@@ -16,6 +16,7 @@ const PrimaryButton = styled(Button)`
     background-color: ${DARK_BLUE};
     background-color: ${props => (props.inverted ? WHITE : DARK_BLUE)};
     border: 1px solid ${props => (props.inverted ? DARK_BLUE : "transparent")};
+    border-radius: 0;
     box-sizing: border-box;
     color: ${props => (props.inverted ? DARK_BLUE : WHITE)};
     font-size: 1rem;
@@ -40,6 +41,7 @@ const PrimaryButton = styled(Button)`
 
 const SecondaryButton = styled(Button)`
   && {
+    border-radius: 0;
     background: linear-gradient(45deg, ${LIGHT_RED} 30%, ${LIGHT_ORANGE} 90%);
     color: ${WHITE};
     width: 100%;
