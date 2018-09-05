@@ -1,30 +1,37 @@
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 
-import { WHITE, DARK_BLUE, LIGHT_BLUE } from "../../utils/colors";
+import {
+  WHITE,
+  DARK_BLUE,
+  LIGHT_BLUE,
+  LIGHT_RED,
+  LIGHT_ORANGE
+} from "../../utils/colors";
 
 const PrimaryButton = styled(Button)`
   && {
     background-color: ${DARK_BLUE};
-    border: 1px solid transparent;
+    background-color: ${props => (props.inverted ? WHITE : DARK_BLUE)};
+    border: 1px solid ${props => (props.inverted ? DARK_BLUE : "transparent")};
     box-sizing: border-box;
-    color: ${WHITE};
+    color: ${props => (props.inverted ? DARK_BLUE : WHITE)};
     font-size: 1rem;
     font-weight: 400;
     line-height: 1;
     height: 3rem;
 
     &: hover {
-      background-color: ${WHITE};
+      background-color: ${props => (props.inverted ? DARK_BLUE : WHITE)};
       border: 1px solid ${LIGHT_BLUE};
-      color: ${DARK_BLUE};
+      color: ${props => (props.inverted ? WHITE : DARK_BLUE)};
     }
   }
 `;
 
 const SecondaryButton = styled(Button)`
   && {
-    background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+    background: linear-gradient(45deg, ${LIGHT_RED} 30%, ${LIGHT_ORANGE} 90%);
     color: ${WHITE};
   }
 `;

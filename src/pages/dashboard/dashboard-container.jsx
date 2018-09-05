@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Dashboard from "./dashboard";
 import { loadCategories } from "./actions";
 import { loadCategoryRandomJoke } from "../view-category/actions";
+import { resetSearchResults } from "../search/actions";
 import preLoad from "../../higher-order-components/pre-load";
 
 const mapStateToProps = state => {
@@ -26,7 +27,7 @@ const mapDispatchToProps = dispatch => ({
   },
 
   handleNavigateToSearch(history) {
-    console.log("history", history);
+    dispatch(resetSearchResults());
     history.push("/search");
   }
 });
