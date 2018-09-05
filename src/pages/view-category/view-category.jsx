@@ -5,16 +5,23 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import ListItemText from "@material-ui/core/ListItemText";
 import DialogActions from "@material-ui/core/DialogActions";
+import withMobileDialog from "@material-ui/core/withMobileDialog";
 import Avatar from "@material-ui/core/Avatar";
 
+import media from "../../utils/media";
 import Loader from "../../components/loader/loader";
 import { PrimaryButton } from "../../components/buttons/buttons";
 
 const ContentSection = styled.section`
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 0 0.5rem;
+
+  ${media.small`
+  flex-direction: row;
+  `};
 `;
 
 const Title = styled(DialogTitle)`
@@ -31,7 +38,7 @@ const JokeDialog = styled(Dialog).attrs({
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 12rem;
+    min-height: 15rem;
     width: 100%;
   }
 `;
@@ -82,18 +89,18 @@ const CategoryDialog = ({
     </ContentSection>
     <ActionFooter>
       <ActionButton
-        inverted
+        inverted={"true"}
         onClick={handleLoadCategoryJokes}
         value={category}
         color="primary"
       >
         Next Joke
       </ActionButton>
-      <ActionButton inverted onClick={onClose} color="primary">
+      <ActionButton inverted={"true"} onClick={onClose} color="primary">
         Close
       </ActionButton>
     </ActionFooter>
   </JokeDialog>
 );
 
-export default CategoryDialog;
+export default withMobileDialog({ breakpoint: "xs" })(CategoryDialog);

@@ -1,7 +1,8 @@
 import {
   SEARCH_JOKES,
   SEARCH_JOKES_SUCCEEDED,
-  SEARCH_JOKES_FAILED
+  SEARCH_JOKES_FAILED,
+  RESET_SEARCH_RESULTS
 } from "./actions";
 
 const initialState = {
@@ -45,6 +46,17 @@ export default (state = initialState, action = {}) => {
         hasError: {
           status: true,
           error: action.error
+        }
+      };
+    }
+
+    case RESET_SEARCH_RESULTS: {
+      return {
+        ...state,
+        data: [],
+        hasError: {
+          status: false,
+          error: ""
         }
       };
     }

@@ -18,7 +18,6 @@ export function* searchJokes({ query }) {
 
     yield put(searchJokesSucceeded(topTen));
   } catch (error) {
-    console.log("error", error);
     yield put(searchJokesFailed(error));
   }
 }
