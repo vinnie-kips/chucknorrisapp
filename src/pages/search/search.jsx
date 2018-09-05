@@ -19,12 +19,26 @@ const ContentContainer = styled.div`
 `;
 
 const SearchHeader = styled.div`
+  align-items: center;
   display: flex;
   justify-content: space-between;
 `;
 
 const SearchInputContainer = styled.div`
   display: flex;
+`;
+
+const SearchField = styled(TextField)`
+  && {
+    min-width: 8rem;
+  }
+`;
+
+const SearchButton = styled(PrimaryButton)`
+  && {
+    margin 0;
+    width: 7rem;
+  }
 `;
 
 class Category extends React.Component {
@@ -68,7 +82,7 @@ class Category extends React.Component {
         <SearchHeader>
           <LinkButton to={"/"}>{"Home".toUpperCase()}</LinkButton>
           <SearchInputContainer>
-            <TextField
+            <SearchField
               name={"searchField"}
               placeholder={"search for..."}
               onKeyPress={this.searchOnEnter}
@@ -76,7 +90,7 @@ class Category extends React.Component {
               onFocus={this.handleFocus}
               value={this.state.searchQuery}
             />
-            <PrimaryButton onClick={this.handleSearch}>Search</PrimaryButton>
+            <SearchButton onClick={this.handleSearch}>Search</SearchButton>
           </SearchInputContainer>
         </SearchHeader>
 
