@@ -6,9 +6,11 @@ import Card from "../../components/card/card";
 const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
 `;
 
 const Heading = styled.h1`
+  align-self: center;
   margin: 0.5rem 0;
 `;
 

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Loader from "../../components/loader/loader";
 import TextField from "../../components/text-field/text-field";
 import { PrimaryButton } from "../../components/buttons/buttons";
+import { LinkButton } from "../../components/links/links";
 import ResultsList from "./resultsList";
 import Card from "../../components/card/card";
 
@@ -15,6 +16,11 @@ const SearchContainer = styled.div`
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const SearchHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const SearchInputContainer = styled.div`
@@ -59,17 +65,21 @@ class Category extends React.Component {
 
     return (
       <SearchContainer>
-        <SearchInputContainer>
-          <TextField
-            name={"searchField"}
-            placeholder={"Search Query"}
-            onKeyPress={this.searchOnEnter}
-            onChange={this.onChange}
-            onFocus={this.handleFocus}
-            value={this.state.searchQuery}
-          />
-          <PrimaryButton onClick={this.handleSearch}>Search</PrimaryButton>
-        </SearchInputContainer>
+        <SearchHeader>
+          <LinkButton to={"/"}>{"Home".toUpperCase()}</LinkButton>
+          <SearchInputContainer>
+            <TextField
+              name={"searchField"}
+              placeholder={"search for..."}
+              onKeyPress={this.searchOnEnter}
+              onChange={this.onChange}
+              onFocus={this.handleFocus}
+              value={this.state.searchQuery}
+            />
+            <PrimaryButton onClick={this.handleSearch}>Search</PrimaryButton>
+          </SearchInputContainer>
+        </SearchHeader>
+
         {isLoading ? (
           <Loader />
         ) : hasError && hasLoaded ? (

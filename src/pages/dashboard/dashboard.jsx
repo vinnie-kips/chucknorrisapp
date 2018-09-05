@@ -11,6 +11,12 @@ const DashboardContainer = styled.div`
   flex-direction: column;
 `;
 
+const SearchButton = styled(SecondaryButton)`
+  align-self: center;
+  width: 15rem;
+  height: 3rem;
+`;
+
 const Dashboard = ({
   categories,
   isLoading,
@@ -19,9 +25,7 @@ const Dashboard = ({
   handleNavigateToSearch
 }) => (
   <DashboardContainer>
-    <SecondaryButton onClick={handleNavigateToSearch}>
-      Search Jokes
-    </SecondaryButton>
+    <SearchButton onClick={handleNavigateToSearch}>Search Jokes</SearchButton>
     {isLoading ? (
       <Loader />
     ) : hasError ? (

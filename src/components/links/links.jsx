@@ -1,18 +1,26 @@
 import styled from "styled-components";
-import Button from "@material-ui/core/Button";
-
+import { Link } from "react-router-dom";
 import { WHITE, DARK_BLUE, LIGHT_BLUE } from "../../utils/colors";
 
-const PrimaryButton = styled(Button)`
+const LinkButton = styled(Link)`
   && {
     background-color: ${DARK_BLUE};
     border: 1px solid transparent;
-    box-sizing: border-box;
+    border-radius: 3px;
     color: ${WHITE};
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1;
-    height: 3rem;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+
+    &: active {
+      background-color: ${DARK_BLUE};
+      border: 1px solid ${LIGHT_BLUE};
+      color: ${WHITE};
+    }
 
     &: hover {
       background-color: ${WHITE};
@@ -22,11 +30,4 @@ const PrimaryButton = styled(Button)`
   }
 `;
 
-const SecondaryButton = styled(Button)`
-  && {
-    background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
-    color: ${WHITE};
-  }
-`;
-
-export { PrimaryButton, SecondaryButton };
+export { LinkButton };
