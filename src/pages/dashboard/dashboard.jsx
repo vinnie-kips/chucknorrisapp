@@ -13,7 +13,6 @@ const DashboardContainer = styled.div`
 
 const SearchButton = styled(SecondaryButton)`
   align-self: center;
-  width: 15rem;
   height: 3rem;
 `;
 

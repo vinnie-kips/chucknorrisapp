@@ -17,13 +17,6 @@ const CategoryContainer = styled.div`
   justify-content: center;
 `;
 
-const Category = styled(PrimaryButton)`
-  && {
-    margin: 1rem;
-    width: 8rem;
-  }
-`;
-
 class CategoryList extends React.Component {
   constructor(props) {
     super(props);
@@ -66,13 +59,13 @@ class CategoryList extends React.Component {
 
         <CategoryContainer>
           {categories.map((category, key) => (
-            <Category
+            <PrimaryButton
               onClick={this.handleSelectCategory}
               key={key}
               value={category}
             >
               {category}
-            </Category>
+            </PrimaryButton>
           ))}
         </CategoryContainer>
       </ListContainer>

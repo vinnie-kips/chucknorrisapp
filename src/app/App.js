@@ -40,10 +40,7 @@ const App = () => (
       <ContentContainer>
         <AppRoutes />
       </ContentContainer>
-      <AppFooter>
-        <span>About Us</span>
-        <span>Contact Us</span>
-      </AppFooter>
+      <AppFooter />
     </AppContainer>
   </Provider>
 );
