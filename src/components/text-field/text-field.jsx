@@ -6,6 +6,7 @@ const TextInput = styled.input`
   box-sizing: border-box;
   border: 1px solid ${SILVER_GREY};
   font-size: 1.4rem;
+  font-family: "Helvetica", "Arial", sans-serif;
   font-weight: 300;
   outline: none;
   padding: 0.5rem 1rem;

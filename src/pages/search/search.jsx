@@ -41,8 +41,6 @@ const SearchButton = styled(PrimaryButton)`
   }
 `;
 
-const Link = styled(LinkButton)``;
-
 class Category extends React.Component {
   constructor(props) {
     super(props);

@@ -7,7 +7,7 @@ const LinkButton = styled(Link)`
     background-color: ${DARK_BLUE};
     border: 1px solid transparent;
     color: ${WHITE};
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1;
