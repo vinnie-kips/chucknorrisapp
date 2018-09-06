@@ -6,7 +6,7 @@ import { loadCategoryRandomJoke } from "../view-category/actions";
 import { resetSearchResults } from "../search/actions";
 import preLoad from "../../higher-order-components/pre-load";
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   const { categories } = state;
   return {
     categories: categories.categoryList || [],
@@ -16,7 +16,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onLoad() {
     dispatch(loadCategories());
   },
@@ -32,7 +32,7 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-const mergeProps = (stateProps, dispatchProps, ownProps) => ({
+export const mergeProps = (stateProps, dispatchProps, ownProps) => ({
   ...stateProps,
   ...dispatchProps,
   ...ownProps,
