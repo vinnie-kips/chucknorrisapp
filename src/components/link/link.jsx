@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+
 import { WHITE, DARK_BLUE, LIGHT_BLUE } from "../../utils/colors";
 
 const LinkButton = styled(Link)`
@@ -29,4 +30,4 @@ const LinkButton = styled(Link)`
   }
 `;
 
-export { LinkButton };
+export default LinkButton;

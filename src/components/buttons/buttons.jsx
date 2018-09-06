@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 
 import media from "../../utils/media";
-
 import {
   WHITE,
   DARK_BLUE,
@@ -33,8 +32,8 @@ const PrimaryButton = styled(Button)`
     }
 
     ${media.small`
-      width: 10rem;
       margin: 1rem;
+      width: 10rem;
     `};
   }
 `;
