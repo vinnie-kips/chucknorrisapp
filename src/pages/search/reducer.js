@@ -54,6 +54,7 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         data: [],
+        hasLoaded: false,
         hasError: {
           status: false,
           error: ""

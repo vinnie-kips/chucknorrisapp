@@ -101,7 +101,7 @@ class Category extends React.Component {
         ) : (
           hasLoaded && (
             <ContentContainer>
-              <ResultsList results={results} hasLoaded={hasLoaded} />
+              <ResultsList results={results} />
             </ContentContainer>
           )
         )}
