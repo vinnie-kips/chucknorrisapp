@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 import { SILVER_GREY } from "../../utils/colors";
 
 const TextInput = styled.input`
@@ -13,14 +14,8 @@ const TextInput = styled.input`
   width: 100%;
 `;
 
-const TextInputWrapper = styled.div`
-  display: flex;
-`;
-
 const TextField = ({ name, placeholder, ...otherProps }) => (
-  <TextInputWrapper>
-    <TextInput name={name} placeholder={placeholder} {...otherProps} />
-  </TextInputWrapper>
+  <TextInput name={name} placeholder={placeholder} {...otherProps} />
 );
 
 export default TextField;
