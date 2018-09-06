@@ -16,7 +16,7 @@ export function* fetchCategoryRandomJoke({ category }) {
     yield put(
       loadCategoryRandomJokeSucceeded({
         id,
-        category: categoryList[0],
+        category: categoryList === null ? "explicit" : categoryList[0],
         iconUrl: icon_url,
         joke: value
       })
