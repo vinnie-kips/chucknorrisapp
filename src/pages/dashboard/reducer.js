@@ -11,7 +11,7 @@ const initialState = {
   hasError: {
     status: false,
     error: ""
-  },
+  }
 };
 
 export default (state = initialState, action = {}) => {
