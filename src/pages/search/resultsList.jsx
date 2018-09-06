@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 
 import Card from "../../components/card/card";
@@ -21,11 +21,13 @@ const Heading = styled.h1`
 console.log("data");
 const ResultsList = ({ results }) => (
   <ListContainer>
-    <Heading>Search Results</Heading>
     {results.length ? (
-      results.map((result, index) => (
-        <Card key={index} content={result.value} iconUrl={result.icon_url} />
-      ))
+      <Fragment>
+        <Heading>Search Results</Heading>
+        {results.map((result, index) => (
+          <Card key={index} content={result.value} iconUrl={result.icon_url} />
+        ))}
+      </Fragment>
     ) : (
       <Card content={"No results found"} />
     )}
