@@ -14,6 +14,7 @@ View App => [https://dreamertram.github.io/chucknorrisapp/](https://dreamertram.
 - [Redux Saga](https://redux-saga.js.org/)
 - [Styled Components](https://www.styled-components.com/)
 - [Material UI](https://material-ui.com/)
+- [React Router](https://reacttraining.com/react-router/web/guides/basic-components)
 
 ## Running the Application Locally
 
