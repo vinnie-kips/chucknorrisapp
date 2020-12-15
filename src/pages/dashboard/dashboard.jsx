@@ -12,7 +12,7 @@ const DashboardContainer = styled.div`
 `;
 
 const SearchButton = styled(SecondaryButton)`
-  align-self: center;
+  align-self: right;
   height: 3rem;
 `;
 
@@ -20,11 +20,11 @@ const Dashboard = ({
   categories,
   isLoading,
   hasError,
-  handleLoadCategoryJokes,
-  handleNavigateToSearch
+  handleLoadCategoryJokes
+  //handleNavigateToSearch
+  //<SearchButton onClick={handleNavigateToSearch}>Search Jokes</SearchButton>
 }) => (
   <DashboardContainer>
-    <SearchButton onClick={handleNavigateToSearch}>Search Jokes</SearchButton>
     {isLoading ? (
       <Loader />
     ) : hasError ? (

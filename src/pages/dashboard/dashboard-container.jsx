@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Dashboard from "./dashboard";
 import { loadCategories } from "./actions";
 import { loadCategoryRandomJoke } from "../view-category/actions";
-import { resetSearchResults } from "../search/actions";
+//import { resetSearchResults } from "../search/actions";
 import preLoad from "../../higher-order-components/pre-load";
 
 export const mapStateToProps = state => {
@@ -24,21 +24,21 @@ export const mapDispatchToProps = dispatch => ({
   handleLoadCategoryJokes(event) {
     const { value } = event.currentTarget;
     dispatch(loadCategoryRandomJoke(value));
-  },
-
-  handleNavigateToSearch(history) {
-    dispatch(resetSearchResults());
-    history.push("/search");
   }
+
+  // handleNavigateToSearch(history) {
+  //   dispatch(resetSearchResults());
+  //   history.push("/search");
+  // }
 });
 
 export const mergeProps = (stateProps, dispatchProps, ownProps) => ({
   ...stateProps,
   ...dispatchProps,
-  ...ownProps,
-  handleNavigateToSearch() {
-    dispatchProps.handleNavigateToSearch(ownProps.history);
-  }
+  ...ownProps
+  // handleNavigateToSearch() {
+  //   dispatchProps.handleNavigateToSearch(ownProps.history);
+  // }
 });
 
 export default connect(
